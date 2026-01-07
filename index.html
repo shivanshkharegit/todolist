@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To do list</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="header">
+      <h2>To do list</h2>
+      <button onclick="toggleTheme()">🌗</button>
+    </div>
+
+    <div class="add-card">
+      <input type="text" id="taskInput" placeholder="Add new task">
+      <input type="date" id="dateInput">
+      <select id="priorityInput">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <input type="text" id="search" placeholder="Search task">
+
+    <div class="filters">
+      <button id="allBtn" class="active" onclick="setFilter('all')">All</button>
+      <button id="pendingBtn" onclick="setFilter('pending')">Pending</button>
+      <button id="completedBtn" onclick="setFilter('completed')">Done</button>
+    </div>
+
+    <div class="progress-box">
+      <div class="progress-bar">
+        <div id="progress"></div>
+      </div>
+      <p id="progressText"></p>
+    </div>
+
+    <div id="taskList"></div>
+
+    <button class="clear-btn" onclick="clearCompleted()">Clear Completed</button>
+
+    <p class="footer" id="stats"></p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
